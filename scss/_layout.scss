@@ -1,0 +1,139 @@
+.resume {
+    display: flex;
+    min-height: 100vh;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    background-color: $color-background;
+  
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  
+  .profile {
+    width: $sidebar-width;
+    background-color: $color-background-light;
+    padding: $spacing-xxl $spacing-xl;
+    border-right: 1px solid $color-border;
+  
+    @include mobile {
+      width: 100%;
+      padding: $spacing-xl $spacing-lg;
+      border-right: none;
+      border-bottom: 1px solid $color-border;
+    }
+  
+    @include element('header') {
+      text-align: center;
+      margin-bottom: $spacing-xxl;
+  
+      @include mobile {
+        margin-bottom: $spacing-xl;
+      }
+    }
+  
+    @include element('image-container') {
+      width: 355.5555419921875;
+      height: 161.61614990234375;
+
+      margin: 0 auto $spacing-lg;
+      overflow: hidden;
+  
+      @include mobile {
+        width: 576;
+        height: 280;
+
+      }
+    }
+  
+    @include element('image') {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    @include element('info') {
+      text-align: center;
+    }
+  
+    @include element('name') {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $color-text-primary;
+      margin-bottom: $spacing-xs;
+    }
+  
+    @include element('title') {
+      font-size: $font-size-base;
+      color: $color-primary;
+      font-weight: $font-weight-medium;
+    }
+  
+    @include element('quote') {
+      background-color: $color-background-card;
+      padding: $spacing-lg;
+      border-radius: $border-radius;
+      margin-bottom: $spacing-xxl;
+      border-left: 4px solid $color-primary;
+  
+      @include mobile {
+        margin-bottom: $spacing-xl;
+      }
+    }
+  
+    @include element('quote-text') {
+      font-style: italic;
+      color: $color-text-secondary;
+      margin-bottom: $spacing-sm;
+      font-size: $font-size-small;
+    }
+  
+    @include element('quote-author') {
+      font-size: $font-size-small;
+      color: $color-text-muted;
+      font-style: normal;
+    }
+  }
+  
+  .content {
+    font-family: $font-family-seconday;
+    flex: 1;
+    padding: $spacing-xxl $spacing-xl;
+  
+    @include mobile {
+      padding: $spacing-xl $spacing-lg;
+    }
+  }
+  
+  .section {
+    margin-bottom: $spacing-xxxl;
+  
+    @include mobile {
+      margin-bottom: $spacing-xxl;
+    }
+  
+    @include element('heading') {
+      font-family: $font-family-primary;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $color-text-primary;
+      margin-bottom: $spacing-xl;
+      position: relative;
+  
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -$spacing-sm;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background-color: $color-primary;
+        border-radius: 2px;
+      }
+  
+      @include mobile {
+        font-size: $font-size-large;
+        margin-bottom: $spacing-lg;
+      }
+    }
+  }

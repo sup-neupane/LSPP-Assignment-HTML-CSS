@@ -1,0 +1,502 @@
+// Contact Component
+.contact {
+    margin-bottom: $spacing-xxl;
+  
+    @include mobile {
+      margin-bottom: $spacing-xl;
+    }
+  
+    @include element('heading') {
+      font-size: $font-size-large;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-lg;
+      color: $color-text-primary;
+    }
+  
+    @include element('item') {
+      margin-bottom: $spacing-lg;
+  
+      @include mobile {
+        margin-bottom: $spacing-md;
+      }
+    }
+  
+    @include element('label') {
+      display: block;
+      font-size: $font-size-small;
+      color: $color-text-muted;
+      margin-bottom: $spacing-xs;
+      font-weight: $font-weight-medium;
+    }
+  
+    @include element('link') {
+      color: $color-text-secondary;
+      font-size: $font-size-small;
+      @include transition(color);
+  
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  
+    @include element('text') {
+      color: $color-text-secondary;
+      font-size: $font-size-small;
+    }
+  }
+  
+  // Social Component
+  .social {
+    margin-bottom: $spacing-xxl;
+  
+    @include mobile {
+      margin-bottom: $spacing-xl;
+    }
+  
+    @include element('heading') {
+      font-size: $font-size-large;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-lg;
+      color: $color-text-primary;
+    }
+  
+    @include element('item') {
+      margin-bottom: $spacing-md;
+    }
+  
+    @include element('platform') {
+      display: block;
+      font-size: $font-size-small;
+      color: $color-text-muted;
+      margin-bottom: $spacing-xs;
+      font-weight: $font-weight-medium;
+    }
+  
+    @include element('link') {
+      color: $color-text-secondary;
+      font-size: $font-size-small;
+      @include transition(color);
+  
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+  
+  // Languages Component
+  .languages {
+    @include element('heading') {
+      font-size: $font-size-large;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-lg;
+      color: $color-text-primary;
+    }
+  
+    @include element('item') {
+      display: flex;
+      align-items: center;
+      margin-bottom: $spacing-md;
+    }
+  
+    @include element('flag') {
+      font-size: $font-size-large;
+      margin-right: $spacing-md;
+    }
+  
+    @include element('info') {
+      flex: 1;
+    }
+  
+    @include element('name') {
+      display: block;
+      font-size: $font-size-small;
+      font-weight: $font-weight-medium;
+      color: $color-text-primary;
+    }
+  
+    @include element('level') {
+      font-size: $font-size-small;
+      color: $color-text-muted;
+    }
+  }
+  
+  // Projects Component
+  .projects {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+    }
+  }
+  
+  .project-card {
+    display: flex;
+    background-color: $color-background-card;
+    border-radius: $border-radius-large;
+    padding: $spacing-lg;
+    @include card-shadow;
+    @include transition(transform);
+  
+    &:hover {
+      transform: translateY(-2px);
+    }
+  
+    @include mobile {
+      padding: $spacing-md;
+    }
+  
+    @include element('icon') {
+      width: 48px;
+      height: 48px;
+      border-radius: $border-radius;
+      @include flex-center;
+      margin-right: $spacing-lg;
+      flex-shrink: 0;
+      font-size: $font-size-large;
+      font-weight: $font-weight-bold;
+  
+      @include mobile {
+        width: 40px;
+        height: 40px;
+        margin-right: $spacing-md;
+      }
+    }
+  
+    @include element('content') {
+      flex: 1;
+    }
+  
+    @include element('title') {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      margin-bottom: $spacing-xs;
+    }
+  
+    @include element('description') {
+      font-size: $font-size-small;
+      color: $color-text-secondary;
+      margin-bottom: $spacing-sm;
+      line-height: $line-height-loose;
+    }
+  
+    @include element('link') {
+      font-size: $font-size-small;
+      color: $color-primary;
+      @include transition(color);
+  
+      &:hover {
+        color: darken($color-primary, 10%);
+      }
+    }
+  }
+  
+  // Timeline Component
+  .timeline {
+    @include element('item') {
+      margin-bottom: $spacing-xl;
+      position: relative;
+  
+      @include mobile {
+        margin-bottom: $spacing-xl;
+      }
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  
+    @include element('period') {
+      font-size: $font-size-small;
+      color: $color-text-muted;
+      font-weight: $font-weight-medium;
+      margin-bottom: $spacing-xs;
+    }
+  
+    @include element('location') {
+      font-size: $font-size-small;
+      color: $color-text-muted;
+      margin-bottom: $spacing-md;
+    }
+  
+    @include element('content') {
+      background-color: $color-background-exp;
+      border-radius: $border-radius-large;
+      padding: $spacing-lg;
+      @include card-shadow;
+  
+      @include mobile {
+        padding: $spacing-md;
+      }
+    }
+
+    @include element('content-inner') {
+        display: flex;
+        flex-direction: row;
+        gap: $spacing-lg;
+      
+        @include mobile {
+          flex-direction: column;
+            gap: 0px;
+        }
+      }
+      
+      @include element('description-wrapper') {
+        flex: 1;
+      }
+  
+    @include element('company') {
+      display: flex;
+      align-items: center;
+      margin-bottom: $spacing-sm;
+    }
+  
+    @include element('logo') {
+      width: 48px;
+      height: 48px;
+      border-radius: $border-radius;
+      overflow: hidden;
+      box-shadow: 3px;
+      @include flex-center;
+      margin-right: $spacing-md;
+      flex-shrink: 0;
+      font-size: $font-size-base;
+      font-weight: $font-weight-bold;
+  
+      @include mobile {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  
+    @include element('details') {
+      flex: 1;
+    }
+  
+    @include element('role') {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      margin-bottom: $spacing-xs;
+    }
+  
+    @include element('company-name') {
+      font-size: $font-size-small;
+      color: $color-text-secondary;
+      margin-bottom: $spacing-sm;
+    }
+  
+    @include element('description') {
+      font-size: $font-size-small;
+      color: $color-text-secondary;
+      line-height: $line-height-loose;
+        margin-bottom: $spacing-sm;
+    }
+  }
+  
+  // Education Component
+  .education {
+    display: grid;
+    gap: $spacing-lg;
+    grid-template-columns: repeat(3, 1fr);
+  
+    @include mobile {
+      gap: $spacing-md;
+      grid-template-columns: 1fr;
+    }
+  
+    @include element('item') {
+      display: flex;
+      align-items: center;
+      background-color: $color-background-card;
+      border-radius: $border-radius-large;
+      padding: $spacing-lg;
+      @include card-shadow;
+  
+      @include mobile {
+        padding: $spacing-md;
+      }
+    }
+  
+    @include element('logo') {
+      width: 48px;
+      height: 48px;
+      border-radius: $border-radius;
+      overflow: hidden;
+      @include flex-center;
+      margin-right: $spacing-lg;
+      flex-shrink: 0;
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+  
+      @include mobile {
+        width: 40px;
+        height: 40px;
+        margin-right: $spacing-md;
+      }
+    }
+  
+    @include element('content') {
+      flex: 1;
+    }
+  
+    @include element('course') {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      margin-bottom: $spacing-xs;
+    }
+  
+    @include element('institution') {
+      font-size: $font-size-small;
+      color: $color-text-secondary;
+      margin-bottom: $spacing-xs;
+    }
+  
+    @include element('date') {
+      font-size: $font-size-small;
+      color: $color-text-muted;
+    }
+  }
+  
+  // Skills Component
+  .skills {
+    @include element('category') {
+      margin-bottom: $spacing-xl;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include element('category-inner'){
+        display: flex;
+        flex-direction: row;
+        gap: $spacing-lg;
+    }
+
+    @include element('category-title-wrapper') {
+      min-width: 150px; 
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-xs; 
+      padding: 1rem;
+
+      @include mobile {
+        min-width: 140px; 
+      }
+    }
+
+    @include element('category-logo') {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #8b5cf6;
+      padding: 6px;
+    }
+  
+    @include element('category-title') {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      margin-bottom: $spacing-md;
+    }
+  
+    @include element('tags') {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-sm;
+    }
+  }
+  
+  .skill-tag {
+    display: inline-block;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius;
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    @include transition(transform);
+  
+    &:hover {
+      transform: translateY(-1px);
+    }
+  
+    @include modifier('design') {
+      background-color: rgba($color-primary, 0.1);
+      color: $color-primary;
+    }
+  
+    @include modifier('dev') {
+      background-color: rgba($color-secondary, 0.1);
+      color: darken($color-secondary, 20%);
+    }
+  }
+  
+  // Tools Component
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $spacing-lg;
+  
+    @include mobile {
+      gap: $spacing-md;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+  
+  .tool {
+    display: flex;
+    align-items: center;
+    background-color: $color-background-card;
+    border-radius: $border-radius-large;
+    padding: $spacing-lg;
+    @include card-shadow;
+    @include transition(transform);
+  
+    &:hover {
+      transform: translateY(-2px);
+    }
+  
+    @include mobile {
+      padding: $spacing-md;
+    }
+  
+    @include element('icon') {
+      width: 40px;
+      height: 40px;
+      border-radius: $border-radius;
+      overflow: hidden;
+      @include flex-center;
+      margin-right: $spacing-md;
+      flex-shrink: 0;
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+  
+      @include mobile {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  
+    @include element('info') {
+      flex: 1;
+    }
+  
+    @include element('name') {
+      font-size: $font-size-small;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      margin-bottom: $spacing-xs;
+    }
+  
+    @include element('description') {
+      font-size: $font-size-small;
+      color: $color-text-secondary;
+    }
+  }
